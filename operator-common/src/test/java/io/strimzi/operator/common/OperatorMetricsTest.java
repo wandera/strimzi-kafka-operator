@@ -460,9 +460,12 @@ public class OperatorMetricsTest {
         MetricsProvider metrics = new MicrometerMetricsProvider();
         MeterRegistry registry = metrics.meterRegistry();
 
-        registry.forEachMeter(meter -> {
-            registry.remove(meter);
-        });
+        if (registry != null) {
+            registry.forEachMeter(meter -> {
+                registry.remove(meter);
+            });
+        }
+
 
         return metrics;
     }
