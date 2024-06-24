@@ -32,6 +32,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.parallel.Execution;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -45,10 +46,12 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.parallel.ExecutionMode.SAME_THREAD;
 
 @ExtendWith(VertxExtension.class)
 @Group("strimzi")
 @Version("v1")
+@Execution(SAME_THREAD)
 public class OperatorMetricsTest {
     private static Vertx vertx;
 
