@@ -59,6 +59,12 @@ public class OperatorMetricsTest {
                         .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true))
                         .setEnabled(true)
         ));
+        // sleep for 1 seconds
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @AfterAll
